@@ -5,7 +5,7 @@
   "homepage": "https://tripoli80.github.io/goit-js-hw-08",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /parcel-project-template/"
+    "build": "parcel build src/*.html --public-url /goit-js-hw-08/"
   },
   "repository": {
     "type": "git",
@@ -15,7 +15,7 @@
   "author": "Tripoli80",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/goitacademy/parcel-project-template/issues"
+    "url": "https://github.com/tripoli80/goit-js-hw-08/issues"
   },
   "dependencies": {
       "@vimeo/player": "^2.17.0",
