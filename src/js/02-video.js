@@ -17,6 +17,5 @@ player.on(
   'timeupdate',
   throttle(e => {
     localStorage.setItem(SAVETIMEKEY, JSON.stringify(e.seconds));
-    console.log(SAVETIMEKEY);
   }, 1000)
 );
