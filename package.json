@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "",
   "homepage": "https://tripoli80.github.io/goit-js-hw-08",
-    "scripts": {
+   "scripts": {
     "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /goit-js-hw-08/"
   },
@@ -12,7 +12,7 @@
     "url": "git+https://github.com/goitacademy/parcel-project-template.git"
   },
   "keywords": [],
-  "author": "Dimov Serhii",
+  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/goitacademy/parcel-project-template/issues"
