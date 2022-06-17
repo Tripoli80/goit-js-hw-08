@@ -1,13 +1,15 @@
-const _ = require('lodash'); //подгружаем библиотеку тормозов
+const throttle = require('lodash.throttle'); //подгружаем библиотеку тормозов
 const validator = require('validator');
 const form = document.querySelector('.feedback-form');
-form.addEventListener('input', _.throttle(savedInputForm, 500));
+const TEMPSTRING = 'feedback-form-state';
+
 const data = {};
+form.addEventListener('input', throttle(savedInputForm, 500));
 readAndWrite();
 //read data & write data
 function readAndWrite() {
   try {
-    const tempRead = localStorage.getItem('feedback-form-state');
+    const tempRead = localStorage.getItem(TEMPSTRING);
     const readData = JSON.parse(tempRead);
     // readData.email="asdas";
     data.email = readData.email;
@@ -25,8 +27,9 @@ function savedInputForm(e) {
   }
   const keyName = e.target.name;
   data[keyName] = e.target.value;
-  localStorage.setItem('feedback-form-state', JSON.stringify(data));
+  localStorage.setItem(TEMPSTRING, JSON.stringify(data));
 }
+
 form.addEventListener('click', e => {
   if (e.target.nodeName !== 'BUTTON') {
     return;
@@ -36,10 +39,9 @@ form.addEventListener('click', e => {
   if (validator.isEmail(data.email)) {
     console.log('send data to server');
     console.table(data);
-    localStorage.clear();
+    localStorage.removeItem(TEMPSTRING);
     readAndWrite();
   } else {
-    alert('e-mail not correct');
+    alert('E-mail not correct!');
   }
-  // console.log(e.button);
 });
